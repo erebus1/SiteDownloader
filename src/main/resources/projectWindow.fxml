@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane fx:id="grid" fx:controller="Controllers.ProjectWindowController"
+          xmlns:fx="http://javafx.com/fxml" alignment="TOP_LEFT" hgap="10" vgap="10">
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+
+    <ToolBar GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" >
+        <MenuBar VBox.vgrow="NEVER" HBox.hgrow="ALWAYS">
+            <menus>
+                <Menu mnemonicParsing="true" text="_File">
+                    <items>
+                        <MenuItem fx:id="newButton" mnemonicParsing="true" text="_New" onAction="#onNew"/>
+                        <MenuItem fx:id="saveButton" mnemonicParsing="true" text="_Save" onAction="#onSave"/>
+                        <MenuItem fx:id="openButton" mnemonicParsing="true" text="_Open" onAction="#onOpen"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="true" text="_Properties">
+                    <items>
+                        <MenuItem fx:id="generalProperties" text="General properties" onAction="#onGeneralProperties"/>
+                        <MenuItem fx:id="filterProperties" text="Filters' properties" onAction="#onFiltersProperties"/>
+                    </items>
+                </Menu>
+
+
+                <Menu fx:id="quite" mnemonicParsing="true" text="_Quite" >
+                    <items>
+                        <MenuItem text="Quite" onAction="#onQuite"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+
+    </ToolBar>
+    <!--<Pane VBox.vgrow="ALWAYS"  />-->
+    <Label fx:id="size" text="downloaded  size: 0 byte"
+           GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="2"/>
+    <Label fx:id="queueSize" text="files in queue: 0"
+           GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
+    <Label fx:id="speed" text="average speed (byte/sec): 0"
+           GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2"/>
+    <Label fx:id="passedTime" text="passed time (sec): 0"
+           GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="2"/>
+    <!--<Label fx:id="leftTime" text="left time (sec): 0"-->
+           <!--GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.columnSpan="2"/>-->
+
+
+    <ToolBar GridPane.columnIndex="0" GridPane.rowIndex="8" GridPane.columnSpan="2" >
+        <Button fx:id="start" text="start" onAction="#onStart"/>
+        <Button fx:id="pause" text="pause" disable="true" onAction="#onPause"/>
+        <Label fx:id="completeLabel" text="Download complete!" visible="false"/>
+        <Pane HBox.hgrow="ALWAYS" />
+        <Button fx:id="startServer" text="start server" minWidth="60" onAction="#onStartServer"/>
+     </ToolBar>
+
+
+</GridPane>

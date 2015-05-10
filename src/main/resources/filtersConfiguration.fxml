@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.sun.javafx.scene.control.skin.InputField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane fx:controller="Controllers.FiltersConfigurationController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+
+    <Label fx:id="errorLabel" text="Wrong max size field format!"
+           wrapText="true" visible="false"
+           GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+    <Label text="Max size of file in bytes (0 mean no restriction by size)" wrapText="true"
+           GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="maxSizeText" text="0"
+           GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="Input black and white list of extensions, each extension in new line:" alignment="CENTER"
+            GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+    <Label text="Black list" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <Label text="White list" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <TextArea fx:id="blackList" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <TextArea fx:id="whiteList" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+    <Button fx:id="openBlackButton" text = "open" onAction="#onOpenBlack"
+            GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <Button fx:id="openWhiteButton" text = "open" onAction="#onOpenWhite"
+            GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    <Button fx:id="saveBlackButton" text = "save" onAction="#onSaveBlack"
+            GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+    <Button fx:id="saveWhiteButton" text = "save" onAction="#onSaveWhite"
+            GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+    <ToolBar GridPane.columnIndex="0" GridPane.rowIndex="8" GridPane.columnSpan="3" >
+        <Pane HBox.hgrow="ALWAYS" />
+        <Button fx:id="CancelButton" text = "Cancel" minWidth="60" onAction="#onCancelButton"/>
+        <Button fx:id="OkButton" text = "Ok" minWidth="60" onAction="#onOkButton"/>
+    </ToolBar>
+
+</GridPane>

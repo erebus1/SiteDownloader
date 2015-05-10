@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<GridPane fx:controller="Controllers.StartController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <padding><Insets top="0" right="25" bottom="10" left="25"/></padding>
+    <Button fx:id="buttonNewProject" GridPane.columnIndex="0" GridPane.rowIndex="1"
+            wrapText="true" textAlignment="CENTER"
+            onAction="#onNewProjectClickMethod" text="Create new project"/>
+    <Button fx:id="buttonOpenProject" GridPane.columnIndex="1" GridPane.rowIndex="1"
+            wrapText="true" textAlignment="CENTER"
+            onAction="#onOpenProjectClickMethod" text="Open exist project"/>
+</GridPane>

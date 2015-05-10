@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.sun.javafx.scene.control.skin.InputField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.sun.javafx.scene.control.skin.IntegerField?>
+<GridPane fx:controller="Controllers.SiteConfigurationController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+
+    <Label fx:id="errorLabel" wrapText="true" visible="false"
+           GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="3"/>
+
+    <Label text="Site address:"
+           GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+    <TextField fx:id = "siteAddressText" text = "http://"
+               GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <Label text="Deep level:"
+           GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+    <TextField fx:id="deepLevel"
+               GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <Label text="Number of threads for downloading:" wrapText="true"
+           GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+    <TextField fx:id="threadsNumber"
+               GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+
+    <CheckBox fx:id="onlyDomain" text="Download only from this domain"
+              GridPane.columnIndex="0" GridPane.rowIndex="4" wrapText="true" maxWidth="200"/>
+
+    <CheckBox fx:id="onlySubdomain" text="Download only from this domain and subdomains"
+              GridPane.columnIndex="0" GridPane.rowIndex="5" wrapText="true" maxWidth="200"/>
+
+    <ToolBar GridPane.columnIndex="0" GridPane.rowIndex="8" GridPane.columnSpan="3" >
+        <Pane HBox.hgrow="ALWAYS" />
+        <Button fx:id="PrevButton" text = "prev" minWidth="60" onAction="#onPrevButton"/>
+        <Button fx:id="NextButton" text = "next" minWidth="60" onAction="#onNextButton"/>
+    </ToolBar>
+
+</GridPane>
